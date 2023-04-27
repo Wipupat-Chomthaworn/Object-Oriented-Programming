@@ -1,0 +1,24 @@
+.card-img-top {
+    width: 190px;
+    /* top:80%; */
+    margin-top: 10%;
+
+}
+
+body {
+    background-color: rgb(139, 173, 207);
+}
+
+.card {
+    /* margin-top: 10%; */
+    /* width: 23rem; */
+    background-color: bisque;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 2rem;
+    margin-bottom: 10%;
+}
+
+#rowmovie {
+    margin-top: 5%;
+}

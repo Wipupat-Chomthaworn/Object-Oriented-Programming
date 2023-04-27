@@ -1,0 +1,371 @@
+<html>
+  <style>@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Mitr:wght@400;600&family=Open+Sans&family=Prompt:wght@300;400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Prompt:wght@300;400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Mali:wght@600&display=swap');
+    body{position:absolute;
+  		background-image:url('https://www.pngplay.com/wp-content/uploads/13/Piano-PNG-Photos.png');
+      overflow:hidden;
+/*       margin-left:30%; */
+      background-color:hsl(260,100%,80%);
+      background-blend-mode:lighten;
+/*       font-family: 'Mitr', sans-serif;
+		font-family: 'Open Sans', sans-serif;
+		font-family: 'Prompt', sans-serif; */
+      font-family: 'Fredoka', sans-serif;
+      }
+  .notebox{height:100%;
+    width:100%;
+    position:relative;
+	
+  }
+/*   .confic{
+bottom:50em;
+    
+  } */
+    h1{
+	color:hsl(87,100%,60%);
+      text-align:center;
+    font-family: 'Fredoka', sans-serif;
+    font-weight:600px;
+    font-size:70px}
+    h2{color:hsl(87,100%,0%);
+font-family: 'Mali', cursive;
+    text-align:center;}
+    .examplemusic{position:absolute;
+      left:5%;
+      padding-top:70px;
+
+    }
+    #n{
+
+    color:hsl(60,100%,60%)}
+    select,input{border-style:solid;
+/*       border-width:2px;
+      border-color:hsl(0,100%,90%); */
+      background-color:hsl(166,100%,90%);
+      font-size:18px;
+    
+/* font-family: 'Open Sans', sans-serif; */
+font-family: 'Prompt', sans-serif;
+      
+    }
+    button{border-style:solid;
+/*       border-width:2px;
+      border-color:hsl(0,100%,90%); */
+      background-color:hsl(190,100%,80%);
+    
+/* font-family: 'Open Sans', sans-serif; */
+font-family: 'Prompt', sans-serif;
+      font-size:15px;
+      
+    }
+    #name{font-family: 'Mali', cursive;
+/*       margin-bottom:10%; */
+      
+
+    font-size:23px}
+    button:hover,select:hover,input:hover,#play:hover{
+		color:hsl(0,100%,0%);
+      background-color:hsl(190,100%,80%);
+    }
+    span{
+font-family: 'Prompt', sans-serif;
+      font-weight:400;
+      font-size:20px;
+    }
+    input{
+
+    border-width:2px;}
+    .confic{
+		left:30%;
+      position:relative;
+      transform:scale(1);
+    }
+    #play{position:relative;
+	background-color:hsl(0,100%,78%);
+    left:13.5%;}
+    .app{
+
+    margin-top:10px;}
+    #notein{border-width:0px;
+		width:300px;
+      height:30px;
+      margin-top:10px;
+      padding:15px;
+    }
+    input,select{
+	border-radius:20px;
+  }
+  </style><h1>
+  Alphabet to MUSIC!
+  </h1>
+  <h2>
+    โปรดใส่ตัวอักษรที่ต้องการแปลงเป็นเสียงเพลงตามหลักโน้ตสากล ภาษาอังกฤษ 
+    Requirment : ใส่ได้ทั้ง พิมพ์เล็กหรือ พิมพ์ใหญ่ และเว้นวรรคเพื่อเพิ่มจังหวะ
+  </h2>
+    <body><div class="confic">
+      
+      <div class="notebox">
+      <input type="text" id="notein">
+      
+      </div><button id="play" onclick="playit()">
+        PLAY!
+      </button><div>
+      
+      </div>
+<div class="app"></div><span>ระดับโน้ต</span>
+<select id="hig" oninput="chhi(this)">
+  <option value="h">สูง</option>
+  <option value="m">กลาง</option>
+<!--   <option value="low">ต่ำ</option> -->
+</select>
+<div><span>ประเภทของรูปคลื่น!</span>
+  <select id="wave" oninput="chwave(value)">
+  <option value="sine">sine</option>
+  <option value="square">square</option>
+  <option value="sawtooth">sawtooth</option>
+  <option value="triangle" >triangle</option>
+    </select>
+      </div>
+      <div>
+  <span>เวลาดีเลย์แต่ละตัวโน้ต</span>
+<input type="number" id="del" max="1000" min="100" value="200" step="100" oninput="chdelay(this)"><span> มิลลิเซค</span>
+  </div>
+<div>
+  <span>ความถี่โน๊ต ปัจจุบัน = <span id="freq">100</span> Hz</span>
+</div>
+<div class="name">
+  <span>Wave Form! = <span id="Wave">sine</span></span>
+</div> <div id="name">
+      B-Kwan  64070103 เฮฟเว่น - วิภูภัทร์ ชมถาวร
+      </div>
+</div>
+      
+<div class="examplemusic">
+  <h2>
+    ตัวอย่างโน๊ต
+ เพลงหนูมาลี 
+    <span id ="n">EDCDEEE DDDEGG EDCDEEE EDDEDC</span>
+    
+    
+    
+  </h2><h2>
+  สร้างเว็ปไซต์สำหรับแปลงตัวอักษรให้กลายเป็นเสียงตัวโน๊ตโดยใช้ Web audio ในการสร้างเสียงโน๊ต โดยสามารถปรับ รูปแบบคลื่นและดีเลย์ เพื่อให้ได้เสียงเหมือนกับเครื่องดนตรีที่เราชอบได้
+  </h2>
+      </div>
+<!-- <span class="name"> B-Kwan  64070103 เฮฟเว่น - วิภูภัทร์ ชมถาวร</span> -->
+<div></div>
+ 
+
+
+<!-- "gain.disconnect(audio.destination)" -->
+<script>
+  let isstart = 0;
+  let delay = 200;
+  let wave = "sine"
+  function chdelay(ele){
+  delay = ele.value}
+  
+  function chwave(ele){
+  wave = ele.value}
+  
+  function chhi(ele){
+	console.log(ele.value)
+  hig = ele.value}
+  
+  audio = new (window.AudioContext || window.webkitAudioContext)()
+
+  osci = audio.createOscillator()
+  gain = audio.createGain()
+
+  osci.connect(gain)
+  gain.connect(audio.destination) //เชื่อม
+  function startsound(){
+    if(isstart == 0){
+      osci.start();
+      isstart = 1;
+    }
+    else{
+      gain.gain.value = 1;
+    }
+  }
+  
+  
+  function sleep(ms) {
+  return new Promise(
+    resolve => setTimeout(resolve, ms)
+  );
+}
+  
+  
+  async function playit(){//play the note
+	let pstr = document.getElementById("notein").value;
+    
+    
+    pstr = pstr.toUpperCase();
+    len = pstr.lenght;
+    console.log(pstr);
+    let temp="";
+    for(let i = 0; i < pstr.length; i++){
+      
+			if ((/[a-zA-Z]/).test(pstr[i])|| pstr[i]==" "){
+           temp+=pstr[i];
+				
+         }
+    }
+    pstr = temp;
+    console.log(temp)
+    for(let i = 0; i < pstr.length; i++){console.log(pstr[i]);console.log("delay"+delay);
+    	if (hig == "m"){
+        if(pstr[i]=="A"){
+        if (i>0){setTimeout(changefre(440),1000)}
+        else{
+		changefre(440);
+      console.log('Y');} 
+      }
+      else if (pstr[i]=='B'){
+        if (i>0){setTimeout(changefre(493),1000)}
+        else{
+		changefre(493);
+      console.log('Y');} 
+      }
+
+      else if (pstr[i]=='C'){
+        if (i>0){setTimeout(changefre(523),1000)}
+        else{
+		changefre(523);
+      console.log('Y');} 
+      }
+
+      else if (pstr[i]=='D'){
+        if (i>0){setTimeout(changefre(587),1000)}
+        else{
+		changefre(587);
+      console.log('Y');} 
+      }
+
+      else if (pstr[i]=='E'){
+        if (i>0){setTimeout(changefre(659),1000)}
+        else{
+		changefre(659);
+      console.log('Y');} 
+      }
+
+      else if (pstr[i]=='F'){
+        if (i>0){setTimeout(changefre(698),1000)}
+        else{
+		changefre(698);
+      console.log('Y');} 
+      }await sleep(delay);}
+                          
+       else{if(pstr[i]=="A"){
+        if (i>0){setTimeout(changefre(880),1000)}
+        else{
+		changefre(880);
+      console.log('Y');} 
+      }
+      else if (pstr[i]=='B'){
+        if (i>0){setTimeout(changefre(987),1000)}
+        else{
+		changefre(987);
+      console.log('Y');} 
+      }
+
+      else if (pstr[i]=='C'){
+        if (i>0){setTimeout(changefre(1046),1000)}
+        else{
+		changefre(1046);
+      console.log('Y');} 
+      }
+
+      else if (pstr[i]=='D'){
+        if (i>0){setTimeout(changefre(1174),1000)}
+        else{
+		changefre(1174);
+      console.log('Y');} 
+      }
+
+      else if (pstr[i]=='E'){
+        if (i>0){setTimeout(changefre(1318),1000)}
+        else{
+		changefre(1318);
+      console.log('Y');} 
+      }
+
+      else if (pstr[i]=='F'){
+        if (i>0){setTimeout(changefre(1396),1000)}
+        else{
+		changefre(1396);
+      console.log('Y');} 
+      }
+
+      else if (pstr[i]=='G'){
+        if (i>0){setTimeout(changefre(1567),1000)}
+        else{
+		changefre(1567);
+      console.log('Y');} 
+      }else{
+		changefre(0);
+      }
+            await sleep(delay);
+		}                              
+        
+      
+      console.log("note"+pstr[i]);
+    }
+    console.log(`${pstr} ${pstr.length}`);}
+  function chwave(ele){
+    // let ele = ele;
+    Wave.innerText = ele;
+    wave = ele;
+console.log(ele)
+  }
+  function changefre(ele){
+    let time = audio.currentTime;
+    ele = parseInt(ele)
+    osci.frequency.value = ele
+    freq.innerText = ele
+
+    
+    let note_osci = audio.createOscillator()
+    let note_gain = audio.createGain()
+
+    note_osci.connect(note_gain)
+    note_gain.connect(audio.destination)
+
+    note_osci.frequency.value = ele;
+    note_osci.type = wave;
+
+    note_osci.start()
+    // note_gain.gain.linearRampToValueAtTime(0,time+1) //แบบที่ 1
+    note_gain.gain.setValueCurveAtTime([1,0],audio.currentTime,.5)
+	console.log(ele)
+  }
+//   function changegain(ele){
+//     Gain.innerText = ele
+//     ele = parseInt(ele)
+//     ele = ele/100
+//     gain.gain.value = ele
+    
+// 	console.log(ele)
+//   }
+//   function changegain(ele){
+//     Gain.innerText = ele
+//     ele = parseInt(ele)
+//     ele = ele/100
+//     gain.gain.value = ele
+    
+// 	console.log(ele)
+//   }
+  // osci.start()
+  
+  // osci.frequency.setValueAtTime(260,audio.currentTime)
+  // osci.frequency.value = 500 // ได้ผลเหมือนข้างบน โดยจะเปลี่ยนทันที
+  
+  // osci.type = 'sine'
+  // osci.disconnect(audio.destination)
+  // gain.gain.value = 0
+</script>
+      </body>
+  <footer></footer>
+  </html>

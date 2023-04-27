@@ -1,0 +1,219 @@
+<html>
+  <head>
+    <title>SVG
+    </title>
+    <style>
+      body{
+        background:#666;
+        margin:0em;
+        margin-top:2em;
+        font-family:sans-serif;
+      }
+      svg{
+        background:hsl(0, 100%, 65%);
+        width:90vmin;
+        height:90vmin;
+        display:block;
+        margin:auto;
+        box-shadow:0px 0px 10px #0006;
+
+      }
+      #grid{
+			opacity:30%;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <svg viewBox="0 0 100 100">
+<!--       <svg id="grid">
+      <path d="M5 0 V100" stroke="blue" stroke-width=".2"/>
+      <path d="M10 0 V100" stroke="blue" stroke-width=".2"/>
+      <path d="M15 0 V100" stroke="blue" stroke-width=".2"/>
+      <path d="M20 0 V100" stroke="blue" stroke-width=".2"/>
+      <path d="M25 0 V100" stroke="blue" stroke-width=".2"/>
+      <path d="M30 0 V100" stroke="blue" stroke-width=".2"/>
+      <path d="M35 0 V100" stroke="blue" stroke-width=".2"/>
+      <path d="M40 0 V100" stroke="blue" stroke-width=".2"/>
+      <path d="M45 0 V100" stroke="blue" stroke-width=".2"/>
+      <path d="M50 0 V100" stroke="blue" stroke-width=".2"/>
+      <path d="M55 0 V100" stroke="blue" stroke-width=".2"/>
+      <path d="M60 0 V100" stroke="blue" stroke-width=".2"/>
+      <path d="M65 0 V100" stroke="blue" stroke-width=".2"/>
+      <path d="M70 0 V100" stroke="blue" stroke-width=".2"/>
+      <path d="M75 0 V100" stroke="blue" stroke-width=".2"/>
+      <path d="M80 0 V100" stroke="blue" stroke-width=".2"/>
+      <path d="M85 0 V100" stroke="blue" stroke-width=".2"/>
+      <path d="M90 0 V100" stroke="blue" stroke-width=".2"/>
+      <path d="M95 0 V100" stroke="blue" stroke-width=".2"/>
+      
+      <path d="M0 5 H100" stroke="blue" stroke-width=".2"/>
+      <path d="M0 10 H100" stroke="blue" stroke-width=".2"/>
+      <path d="M0 15 H100" stroke="blue" stroke-width=".2"/>
+      <path d="M0 20 H100" stroke="blue" stroke-width=".2"/>
+      <path d="M0 25 H100" stroke="blue" stroke-width=".2"/>
+      <path d="M0 30 H100" stroke="blue" stroke-width=".2"/>
+      <path d="M0 35 H100" stroke="blue" stroke-width=".2"/>
+      <path d="M0 40 H100" stroke="blue" stroke-width=".2"/>
+      <path d="M0 45 H100" stroke="blue" stroke-width=".2"/>
+      <path d="M0 50 H100" stroke="blue" stroke-width=".2"/>
+      <path d="M0 55 H100" stroke="blue" stroke-width=".2"/>
+      <path d="M0 60 H100" stroke="blue" stroke-width=".2"/>
+      <path d="M0 65 H100" stroke="blue" stroke-width=".2"/>
+      <path d="M0 70 H100" stroke="blue" stroke-width=".2"/>
+      <path d="M0 75 H100" stroke="blue" stroke-width=".2"/>
+      <path d="M0 80 H100" stroke="blue" stroke-width=".2"/>
+      <path d="M0 85 H100" stroke="blue" stroke-width=".2"/>
+      <path d="M0 90 H100" stroke="blue" stroke-width=".2"/>
+      <path d="M0 95 H100" stroke="blue" stroke-width=".2"/>
+      </svg> -->
+<!--       <circle r="20" cx="50" cy="50" fill="hsl(0, 0%, 50%, .5)"/> -->
+      
+<!--       body -->
+      <path fill="hsl(200, 0%, 30%)" stroke="black" stroke-width="1" stroke-linecap="round" 
+            d="M24, 70 a10 20, 0, 0 1, 50 0 M24, 70 a20 10, 0, 0 0, 50 0">
+        <animate attributeName="d" values="
+          M24, 70 a10 20, 0, 0 1, 50 0 M24, 70 a20 10, 0, 0 0, 50 0;
+          M23, 70 a11 20, 0, 0 1, 52 0 M23, 70 a20 10, 0, 0 0, 52 0;
+          M24, 70 a10 20, 0, 0 1, 50 0 M24, 70 a20 10, 0, 0 0, 50 0;
+                                          "
+        dur="3" repeatCount="indefinite"/>"
+      </path>
+      <path fill="hsl(200, 0%, 30%)" stroke="black" stroke-width="1" stroke-linecap="round" 
+            d="M35 30 a1 1, 0, 0 1, 10 -9">
+        <animate attributeName="d" values="
+                                          M35 30 a1 1, 0, 0 1, 10 -9; 
+                                          M35 32 a1 1, 0, 0 1, 10 -8; 
+                                          M35 30 a1 1, 0, 0 1, 10 -9; 
+                                          "
+        dur="3" repeatCount="indefinite"/>"
+      </path>
+      <path fill="hsl(200, 0%, 30%)" stroke="black" stroke-width="1" stroke-linecap="round" 
+            d="M53 21 a1 1, 10, 0 1, 10 9">
+        <animate attributeName="d" values="
+                                          M53 21 a1 1, 0, 0 1, 10 9; 
+                                          M53 24 a1 1, 0, 0 1, 10 8; 
+                                          M53 21 a1 1, 0, 0 1, 10 9; 
+                                          "
+        dur="3" repeatCount="indefinite"/>"
+      </path>
+      <path fill="hsl(200, 0%, 40%)" stroke="none" d="M55 23 a1 1, 0, 0 1, 6 5 z">
+        <animate attributeName="d" values="
+                                          M55 23 a1 1, 0, 0 1, 6 5 z; 
+                                          M55 26 a1 1, 0, 0 1, 6 4 z; 
+                                          M55 23 a1 1, 0, 0 1, 6 5 z; 
+                                          "
+        dur="3" repeatCount="indefinite"/>"
+      </path>
+      <path fill="hsl(200, 0%, 40%)" stroke="none" d="M37 28 a1 1, 0, 0 1, 6 -5 z">
+        <animate attributeName="d" values="
+                                          M37 28 a1 1, 0, 0 1, 6 -5 z; 
+                                          M37 30 a1 1, 0, 0 1, 6 -4 z; 
+                                          M37 28 a1 1, 0, 0 1, 6 -5 z; 
+                                          "
+        dur="3" repeatCount="indefinite"/>"
+      </path>
+      
+<!--       face -->
+      <path fill="none" stroke="black" stroke-width="1" stroke-linecap="round" 
+            d="M42 30 l5 1 M53 31 l5 -1">
+        <animate attributeName="d" values="
+                                           M42 30 l5 1 M53 31 l5 -1;
+                                           M42 33 l5 1 M53 34 l5 -1;
+                                           M42 30 l5 1 M53 31 l5 -1;
+                                           "
+        dur="3" repeatCount="indefinite"/>"
+      </path>
+      <path fill="hsl(200, 0%, 80%)" stroke="black" stroke-width="1" stroke-linecap="round" 
+            d="M35 35, h13 M35 35, a1 1, 0, 0 0, 13 0 ">
+        <animate attributeName="d" values="
+                                           M35 35, h13 M35 35, a1 1, 0, 0 0, 13 0;
+                                           M35 39, h12 M35 39, a1 0, 0, 0 0, 12 0;
+                                           M35 35, h13 M35 35, a1 1, 0, 0 0, 13 0;
+                                           "
+        dur="3" repeatCount="indefinite"/>"
+      </path>
+      <path fill="hsl(200, 0%, 80%)" stroke="black" stroke-width="1" stroke-linecap="round" 
+            d="M52 35, h13 M52 35, a1 1, 0, 0 0, 13 0 ">
+        <animate attributeName="d" values="
+                                           M52 35, h13 M52 35, a1 1, 0, 0 0, 13 0;
+                                           M52 39, h12 M52 39, a1 0, 0, 0 0, 12 0;
+                                           M52 35, h13 M52 35, a1 1, 0, 0 0, 13 0;
+                                           "
+        dur="3" repeatCount="indefinite"/>"
+      </path>
+      <path fill="hsl(5, 100%, 40%)" stroke="black" stroke-width="1" 
+        stroke-linecap="round" d="M40 35 a1 1, 0, 0 0, 5 0 z M55 35 a1 1, 0, 0 0, 5 0 z">
+        <animate attributeName="d" values="
+                                           M40 35 a1 2, 0, 0 0, 5 0 z M55 35 a1 2, 0, 0 0, 5 0 z;
+                                           M40 39 a1 0, 0, 0 0, 5 0 z M55 39 a1 0, 0, 0 0, 5 0 z;
+                                           M40 35 a1 2, 0, 0 0, 5 0 z M55 35 a1 2, 0, 0 0, 5 0 z;
+                                           "
+        dur="3" repeatCount="indefinite"/>"
+      </path>
+
+      <ellipse rx="10" ry="5" cx="50" cy="47" fill="hsl(200, 0%, 60%)">
+        <animate attributeName="cy" values="
+                                           47;
+                                           49;
+                                           47;
+                                           "
+        dur="3" repeatCount="indefinite"/>"
+      </ellipse>
+      <path fill="none" stroke="black" stroke-width=".5" stroke-linecap="round" 
+            d="M48 50 l2 -2 l2 2">
+        <animate attributeName="d" values="
+                                           M48 50 l2 -2 l2 2;
+                                           M48 52 l2 -2 l2 2;
+                                           M48 50 l2 -2 l2 2;
+                                           "
+        dur="3" repeatCount="indefinite"/>"
+      </path>
+      <path fill="black" stroke="black" stroke-width=".5" stroke-linecap="round" 
+            d="M48 44 l2 2 v2 v-2 l2 -2 z">
+        <animate attributeName="d" values="
+                                           M48 44 l2 2 v2 v-2 l2 -2 z;
+                                           M48 46 l2 2 v2 v-2 l2 -2 z;
+                                           M48 44 l2 2 v2 v-2 l2 -2 z;
+                                           "
+        dur="3" repeatCount="indefinite"/>"
+      </path>
+      <path fill="hsl(200, 0%, 60%)" stroke="none"
+            d="M40 55 a1 1, 0, 0 0, 20 0">
+        <animate attributeName="d" values="
+                                           M40 55 a1 1, 0, 0 0, 20 0;
+                                           M39 57 a1 1, 0, 0 0, 22 0;
+                                           M40 55 a1 1, 0, 0 0, 20 0;
+                                           "
+        dur="3" repeatCount="indefinite"/>"        
+      </path>
+      <path fill="hsl(200, 0%, 30%)" stroke="none" 
+            d="M40 55 a2 1, 0, 1 0, 20 0">
+                <animate attributeName="d" values="
+                                           M40 55 a2 1, 0, 1 0, 20 0;
+                                           M39 56 a2 1, 0, 1 0, 22 0;
+                                           M40 55 a2 1, 0, 1 0, 20 0;
+                                           "
+        dur="3" repeatCount="indefinite"/>" 
+      </path>
+      <path fill="none" stroke="black" stroke-width="1" stroke-linecap="round" 
+            d="M30 60 a1 1, 0, 0 0, 10 0">
+        <animate attributeName="d" values="
+                                           M30 60 a1 1, 0, 0 0, 10 0;
+                                           M29  62 a1 1, 0, 0 0, 10 0;
+                                           M30 60 a1 1, 0, 0 0, 10 0;
+                                           "
+        dur="3" repeatCount="indefinite"/>"
+      </path>
+      <path fill="none" stroke="black" stroke-width="1" stroke-linecap="round" 
+            d="M60 60 a1 1, 0, 0 0, 10 0">
+        <animate attributeName="d" values="
+                                           M60 60 a1 1, 0, 0 0, 10 0;
+                                           M61  62 a1 1, 0, 0 0, 10 0;
+                                           M60 60 a1 1, 0, 0 0, 10 0;
+                                           "
+        dur="3" repeatCount="indefinite"/>"        
+      </path>
+    </svg>
+  </body>
+</html>

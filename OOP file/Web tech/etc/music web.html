@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>J-pop station</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+    }
+    body {
+      background: linear-gradient(-30deg, cyan, green);
+      background-size: cover;
+    }
+    ::selection {
+      color: pink;
+    }
+    .main {
+      position: relative;
+      display: inline;
+      justify-content: space-between;
+      text-align: center;
+      align-content: center;
+      width: 100%;
+      height: 100%;
+      top: 10%;
+    }
+    .containner {
+      width: 100%;
+      /*       height: 100%; */
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+    .button {
+      width: 25vh;
+      height: 25vh;
+      border-radius: 15px;
+      cursor: pointer;
+      border: none;
+      background-size: cover;
+      transition: transform 0.25s;
+      position: relative;
+      top: 30px;
+    }
+    .button:hover {
+      transform: scale(1.2, 1.2);
+      z-index: 2;
+    }
+    .button:active {
+      transform: scale(1, 1);
+      z-index: 2;
+    }
+    #mute {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    #pause {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    h1 {
+      color: hsl(150, 80%, 50%);
+      text-shadow: 1px 1px black;
+      position: absolute;
+      bottom: 0;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      background-color: rgba(240, 240, 240, 0.4);
+    }
+    .volume {
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      top: 70px;
+    }
+    .time {
+      position: relative;
+    }
+    #volume {
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+    #time:hover,
+    #volume:hover {
+      opacity: 1;
+    }
+    input[type="range"] {
+      -webkit-appearance: none;
+      margin: 0px;
+      padding: 0px;
+      background: white;
+      height: 13px;
+      border-radius: 540px;
+    }
+    input[type="range"]::-ms-fill-lower {
+      background: #000;
+    }
+    input[type="range"]::-ms-fill-upper {
+      background: #000;
+    }
+    input[type="range"]::-moz-range-track {
+      border: none;
+      background: #000;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      background: black;
+      height: 15px;
+      width: 15px;
+      border-radius: 100%;
+    }
+    input[type="range"]::-moz-range-thumb {
+      background: black;
+      height: 15px;
+      width: 15px;
+      border-radius: 100%;
+    }
+    input[type="range"]::-ms-thumb {
+      -webkit-appearance: none;
+      background: black;
+      height: 15px;
+      width: 15px;
+      border-radius: 100%;
+    }
+    .time input[type="range"] {
+      opacity: 0.8;
+      transition: opacity 0.25s;
+      width: 800px;
+      cursor: pointer;
+    }
+    .time input[type="range"]:hover {
+      opacity: 1;
+    }
+    #playing {
+      visibility: hidden;
+      position: relative;
+      display: block;
+    }
+    #timebox {
+      font-family: "Roboto Mono";
+      font-size: 20px;
+      text-shadow: 0.2px 0px white;
+    }
+    #img-icon {
+      width: 17vh;
+      height: 17vh;
+      border-radius: 100%;
+      animation: low 5s infinite linear;
+    }
+    @keyframes low {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+    h2 {
+      font-family: "Roboto Mono";
+      font-size: 26px;
+      text-shadow: 0.2px 0px white;
+    }
+    #text2 {
+      visibility: hidden;
+      color: hsl(0, 70%, 50%);
+    }
+  </style>
+  <body>
+    <audio id="music" src="" loop autoplay></audio>
+    <div class="containner">
+      <div class="main">
+        <div class="time">
+          <div id="playing">
+            <img
+              id="img-icon"
+              src="https://cdn.discordapp.com/attachments/944823787726188555/944863901424705536/970a9668ad3ef6c4ec51fe6f502a8457.jpg"
+            />
+            <h2 id="text">Now playing</h2>
+            <h2 id="text2">Now muted</h2>
+          </div>
+          <button onClick="pause()" id="pause">
+            <i class="fa fa-pause" style="font-size: 24px"></i>
+          </button>
+          <input
+            id="seekslider"
+            type="range"
+            value="0"
+            min="0"
+            max="800"
+            step="1"
+          />
+          <div id="timebox">
+            <span id="curtimetext">00:00</span> /
+            <span id="durtimetext">00:00</span>
+          </div>
+        </div>
+        <button
+          id="minami"
+          value="minami"
+          type="button"
+          class="button"
+          onClick="play(this)"
+          style="
+            background-image: url('https://cdn.discordapp.com/attachments/944823787726188555/944863901424705536/970a9668ad3ef6c4ec51fe6f502a8457.jpg');
+          "
+        >
+          <h1>Minami</h1>
+        </button>
+        <button
+          id="tuyu"
+          value="tuyu"
+          type="button"
+          class="button"
+          onClick="play(this)"
+          style="
+            background-image: url('https://yt3.ggpht.com/Kyb1VwVChx8DXOgqOhrq9Lvca5e_SZskAs6f7l5wVoL_ZOLFoJv51Ar0Hye0VxPpntP_rUTFiw=s176-c-k-c0x00ffffff-no-rj-mo');
+          "
+        >
+          <h1>TUYU</h1>
+        </button>
+        <button
+          id="yorushika"
+          value="yorushika"
+          type="button"
+          class="button"
+          onClick="play(this)"
+          style="
+            background-image: url('https://yt3.ggpht.com/ytc/AKedOLQIIrZ9Qz1WFuLw6YuOzENINQjv4Q5u7C7Ebylf=s176-c-k-c0x00ffffff-no-rj-mo');
+          "
+        >
+          <h1>Yorushika</h1>
+        </button>
+        <button
+          id="eve"
+          value="eve"
+          type="button"
+          class="button"
+          onClick="play(this)"
+          style="
+            background-image: url('https://media.discordapp.net/attachments/944823787726188555/979121931808817212/500x500.jpg');
+          "
+        >
+          <h1>Eve</h1>
+        </button>
+        <button
+          id="inabaku"
+          value="inabaku"
+          type="button"
+          class="button"
+          onClick="play(this)"
+          style="
+            background-image: url('https://i1.sndcdn.com/artworks-Ny8WSYtuf0s7IkNl-MuB6PQ-t500x500.jpg');
+          "
+        >
+          <h1>inabakumori</h1>
+        </button>
+        <button
+          id="yoasobi"
+          value="yoasobi"
+          type="button"
+          class="button"
+          onClick="play(this)"
+          style="
+            background-image: url('https://c.min.ms/t/d/member/c/101/101521/pagegallery/1611077974/be44e0c7.jpg');
+          "
+        >
+          <h1>Yoasobi</h1>
+        </button>
+        <button
+          id="kenshi"
+          value="kenshi"
+          type="button"
+          class="button"
+          onClick="play(this)"
+          style="
+            background-image: url('https://cdn.discordapp.com/attachments/944823787726188555/944952693041037392/LemonMV_HP.jpg');
+          "
+        >
+          <h1>Kenshi</h1>
+        </button>
+        <div class="volume">
+          <button onClick="mute()" id="mute">
+            <i class="fa fa-volume-up" style="font-size: 24px"></i>
+          </button>
+          <input
+            id="volume"
+            type="range"
+            value="10"
+            min="0"
+            max="100"
+            step="1"
+            oninput="volume(this)"
+            style="cursor: pointer"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    var music = document.getElementById("music");
+    var playing = document.getElementById("playing");
+    var img = document.getElementById("img-icon");
+    var txt = document.getElementById("text");
+    var txt2 = document.getElementById("timebox");
+    var txt3 = document.getElementById("durtimetext");
+    function play(audio) {
+      var x = audio.value;
+      if (x == "minami") {
+        music.src =
+          "https://cdn.discordapp.com/attachments/944823787726188555/944823856949002291/DROPMV.mp3";
+        music.play();
+        playing.style = "visibility: visible";
+        img.src =
+          "https://cdn.discordapp.com/attachments/944823787726188555/944863901424705536/970a9668ad3ef6c4ec51fe6f502a8457.jpg";
+        document.body.style =
+          "background-image: url('https://cdn.discordapp.com/attachments/944823787726188555/945003862404784199/Image4.jpg')";
+        txt.style = "color: black;";
+        txt2.style = "color: black;";
+      } else if (x == "tuyu") {
+        music.src =
+          "https://cdn.discordapp.com/attachments/944823787726188555/946622803279495188/-_MV.mp3";
+        music.play();
+        playing.style = "visibility: visible";
+        img.src =
+          "https://yt3.ggpht.com/Kyb1VwVChx8DXOgqOhrq9Lvca5e_SZskAs6f7l5wVoL_ZOLFoJv51Ar0Hye0VxPpntP_rUTFiw=s176-c-k-c0x00ffffff-no-rj-mo";
+        document.body.style =
+          "background-image: url('https://cdn.discordapp.com/attachments/944823787726188555/945002385732931664/Image1.jpg')";
+        txt.style = "color: black;";
+        txt2.style = "color: black;";
+      } else if (x == "yorushika") {
+        music.src =
+          "https://cdn.discordapp.com/attachments/944823787726188555/944834825062322236/-_Music_Video.mp3";
+        music.play();
+        playing.style = "visibility: visible";
+        img.src =
+          "https://yt3.ggpht.com/ytc/AKedOLQIIrZ9Qz1WFuLw6YuOzENINQjv4Q5u7C7Ebylf=s176-c-k-c0x00ffffff-no-rj-mo";
+        document.body.style =
+          "background-image: url('https://cdn.discordapp.com/attachments/944823787726188555/945006192416157756/Image12.jpg')";
+        txt.style = "color: darkgreen; text-shadow: none;";
+        txt2.style = "color: darkgreen; text-shadow: none;";
+      } else if (x == "eve") {
+        music.src =
+          "https://cdn.discordapp.com/attachments/944823787726188555/944843547037798511/-_Eve_MV.mp3";
+        music.play();
+        playing.style = "visibility: visible";
+        img.src =
+          "https://media.discordapp.net/attachments/944823787726188555/979121931808817212/500x500.jpg";
+        document.body.style =
+          "background-image: url('https://cdn.discordapp.com/attachments/944823787726188555/945004653656031323/Image6.jpg')";
+        txt.style = "color: white; text-shadow: .2px 0px black;";
+        txt2.style = "color: white; text-shadow: .2px 0px black;";
+      } else if (x == "inabaku") {
+        music.src =
+          "https://cdn.discordapp.com/attachments/944823787726188555/944843552830144543/Vo._.mp3";
+        music.play();
+        playing.style = "visibility: visible";
+        img.src =
+          "https://i1.sndcdn.com/artworks-Ny8WSYtuf0s7IkNl-MuB6PQ-t500x500.jpg";
+        document.body.style =
+          "background-image: url('https://cdn.discordapp.com/attachments/944823787726188555/945005048117735464/Image7.jpg')";
+        txt.style = "color: black;";
+        txt2.style = "color: black;";
+      } else if (x == "yoasobi") {
+        music.src =
+          "https://cdn.discordapp.com/attachments/944823787726188555/944954796010516541/yoasobi.mp3";
+        music.play();
+        playing.style = "visibility: visible";
+        img.src =
+          "https://c.min.ms/t/d/member/c/101/101521/pagegallery/1611077974/be44e0c7.jpg";
+        document.body.style =
+          "background-image: url('https://cdn.discordapp.com/attachments/944823787726188555/945005753406738482/Image11.jpg')";
+        txt.style = "color: black;";
+        txt2.style = "color: black;";
+      } else if (x == "kenshi") {
+        music.src =
+          "https://cdn.discordapp.com/attachments/944823787726188555/944954377104404540/MVLemon.mp3";
+        music.play();
+        playing.style = "visibility: visible";
+        img.src =
+          "https://cdn.discordapp.com/attachments/944823787726188555/944952693041037392/LemonMV_HP.jpg";
+        document.body.style =
+          "background-image: url('https://www.billboard.com/wp-content/uploads/2020/07/Kenshi-Yonezu-2020-cr-Billboard-Japan-1548-1594233636.jpg?w=1024')";
+        txt.style = "color: white; text-shadow: .2px 0px black;";
+        txt2.style = "color: white; text-shadow: .2px 0px black;";
+      }
+    }
+    function volume(vol) {
+      var val = vol.value;
+      music.volume = `${val / 100}`;
+    }
+    function mute() {
+      var audio = document.getElementById("music");
+      if (audio.muted) {
+        audio.muted = false;
+        document.getElementById(
+          "mute"
+        ).innerHTML = `<i class="fa fa-volume-up" style="font-size:24px"></i>`;
+        document.getElementById("text2").style = "visibility: hidden";
+      } else {
+        audio.muted = true;
+        document.getElementById(
+          "mute"
+        ).innerHTML = `<i class="fas fa-volume-mute" style="font-size:24px"></i>`;
+        document.getElementById("text2").style = "visibility: visible";
+      }
+    }
+    function pause() {
+      var audio = document.getElementById("music");
+      if (audio.paused) {
+        audio.play();
+        document.getElementById(
+          "pause"
+        ).innerHTML = `<i class="fa fa-pause" style="font-size:24px"></i>`;
+        document.getElementById("text").innerHTML = `<h2>Now playing</h2>`;
+      } else {
+        audio.pause();
+        document.getElementById(
+          "pause"
+        ).innerHTML = `<i class="fa fa-play" style="font-size:24px"></i>`;
+        document.getElementById("text").innerHTML = `<h2>Now paused</h2>`;
+      }
+    }
+    var audio,
+      seekslider,
+      seeking = false,
+      seekto,
+      curtimetext,
+      durtimetext;
+    function initAudioPlayer() {
+      audio = document.getElementById("music");
+      seekslider = document.getElementById("seekslider");
+      curtimetext = document.getElementById("curtimetext");
+      durtimetext = document.getElementById("durtimetext");
+      seekslider.addEventListener("mousedown", function (event) {
+        seeking = true;
+        seek(event);
+      });
+      seekslider.addEventListener("mousemove", function (event) {
+        seek(event);
+      });
+      seekslider.addEventListener("mouseup", function () {
+        seeking = false;
+      });
+      audio.addEventListener("timeupdate", function () {
+        seektimeupdate();
+      });
+      function seek(event) {
+        if (seeking) {
+          seekslider.value = event.clientX - seekslider.offsetLeft;
+          seekto = audio.duration * (seekslider.value / 800);
+          audio.currentTime = seekto;
+        }
+      }
+      function seektimeupdate() {
+        var nt = audio.currentTime * (800 / audio.duration);
+        seekslider.value = nt;
+        var curmins = Math.floor(audio.currentTime / 60);
+        var cursecs = Math.floor(audio.currentTime - curmins * 60);
+        var durmins = Math.floor(audio.duration / 60);
+        var dursecs = Math.floor(audio.duration - durmins * 60);
+        if (cursecs < 10) {
+          cursecs = "0" + cursecs;
+        }
+        if (dursecs < 10) {
+          dursecs = "0" + dursecs;
+        }
+        if (curmins < 10) {
+          curmins = "0" + curmins;
+        }
+        if (durmins < 10) {
+          durmins = "0" + durmins;
+        }
+        curtimetext.innerHTML = curmins + ":" + cursecs;
+        durtimetext.innerHTML = durmins + ":" + dursecs;
+      }
+    }
+    window.addEventListener("load", initAudioPlayer);
+  </script>
+</html>

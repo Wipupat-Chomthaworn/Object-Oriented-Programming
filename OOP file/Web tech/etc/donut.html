@@ -1,0 +1,40 @@
+<html>
+<head>
+  <title>3D Donut Animation</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r122/three.min.js"></script>
+  <script>
+    // Set up the scene, camera, and renderer
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    // Create the donut shape
+    const donutGeometry = new THREE.TorusGeometry(1, 0.5, 16, 100);
+    const donutMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000 });
+    const donut = new THREE.Mesh(donutGeometry, donutMaterial);
+    scene.add(donut);
+
+    // Set the camera position
+    camera.position.z = 5;
+
+    // Animate the donut
+    function animate() {
+      requestAnimationFrame(animate);
+      donut.rotation.x += 0.01;
+      donut.rotation.y += 0.01;
+      renderer.render(scene, camera);
+    }
+    animate();
+  </script>
+</body>
+</html>

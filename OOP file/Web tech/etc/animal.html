@@ -1,0 +1,732 @@
+<html>
+  <head>
+    <title>SVG</title>
+    <style>
+      body {
+        background: #666;
+        margin: 0em;
+        margin-top: 2em;
+        font-family: sans-serif;
+      }
+      svg {
+        background: hsl(0, 0%, 40%);
+        width: 110vmin;
+        height: 90vmin;
+        display: block;
+        margin: auto;
+        box-shadow: 0px 0px 10px #0006;
+      }
+      .arm {
+        animation: arming 0.5s infinite linear alternate;
+        transform-style: preserve-3d;
+      }
+      @keyframes arming {
+        from {
+          transform: rotatex(0deg);
+        }
+        to {
+          transform: rotatex(10deg);
+        }
+      }
+      .rat {
+        animation: run 6s infinite linear;
+      }
+      @keyframes run {
+        0% {
+          transform: translate(0px, 0px);
+        }
+        10% {
+          transform: translate(0px, 0px);
+        }
+        35% {
+          transform: translate(100px, 100px);
+        }
+        40% {
+          transform: translate(100px, -100px);
+        }
+        45% {
+          transform: translate(-90px, -90px);
+        }
+        70% {
+          transform: translate(0px, 0px);
+        }
+        100% {
+          transform: translate(0px, 0px);
+        }
+      }
+      .cat {
+        animation: cating 2.5s infinite linear alternate;
+      }
+      @keyframes cating {
+        from {
+          transform: translate(0px, 0px);
+        }
+        to {
+          transform: translate(0px, -1.5px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <svg viewBox="0 0 100 100">
+      <!------------  หนู <3 ---------------------------------------------------------------------------------------->
+      <!-- หาง -->
+      <path
+        class="rat"
+        class="rat"
+        d="M 66 34 C66 35, 50 32, 66 28"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke="hsl(8, 47%, 65%)"
+        fill="none"
+      />
+
+      <path class="rat" fill="hsl(216, 9%, 32%)" d="m65 35 a10 10,0,0 1,20 0" />
+      <!-- ตัว -->
+
+      <!-- หูขวา -->
+      <path
+        class="rat"
+        fill="hsl(216, 9%, 40%)"
+        d="m86.5 29.5 a3 3,0,1 1,3 2"
+      />
+      <path class="rat" fill="hsl(8, 47%, 65%)" d="m87.3 28.4 a2 2,0,1 1,3 2" />
+
+      <path class="rat" fill="hsl(216, 9%, 32%)" d="m78 35 a3 3,0,1 1,14 0" />
+      <!-- หัว -->
+      <path class="rat" fill="hsl(216, 9%, 40%)" d="m67 35 a2 2,0,0 1,5 0" />
+      <!-- ขาหลัง -->
+      <path class="rat" fill="hsl(216, 9%, 40%)" d="m77 35 a2 2,0,0 1,5 0" />
+      <!-- ขาหน้า -->
+      <circle class="rat" fill="hsl(0, 0%, 15%)" r=".7" cx="91.8" cy="34.6" />
+      <!-- จมูก -->
+      <circle class="rat" fill="hsl(0, 0%, 15%)" r=".4" cx="86.5" cy="31.4" />
+      <!-- ตา -->
+
+      <!-- หูซ้าย -->
+      <path class="rat" fill="hsl(216, 9%, 40%)" d="m82 31 a3 3,0,1 1,3 -2" />
+      <path
+        class="rat"
+        fill="hsl(216, 9%, 40%)"
+        stroke="hsl(216, 9%, 40%)"
+        stroke-width="1"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="m82.1 30.5 l2.5,.2 l0, -2z"
+      />
+      <path class="rat" fill="hsl(8, 47%, 65%)" d="m81.4 30 a2 2,0,1 1,3 -2" />
+      <path
+        class="rat"
+        fill="hsl(8, 47%, 65%)"
+        stroke="hsl(8, 47%, 65%)"
+        stroke-width=".5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="m81.6, 29.8 l2.55,.3 l0, -2z"
+      />
+
+      <!------------  กระรอก <3 ---------------------------------------------------------------------------------------->
+      <!-- หาง -->
+      <circle fill="hsl(37, 50%, 22%)" r="7.5" cx="2.5" cy="13" />
+      <path
+        d="M10,30 C6,30 3,30 3,23"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke="hsl(37, 50%, 22%)"
+        fill="hsl(37, 50%, 22%)"
+      />
+      <path
+        d="M3,23 C3,21 3,20 1,19"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke="hsl(37, 50%, 22%)"
+        fill="none"
+      />
+      <path
+        d="m9.5, 13 l0, 16.2 l-6.5, -6 l-.1, -5z"
+        stroke="hsl(37, 50%, 22%)"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        fill="hsl(37, 50%, 22%)"
+      />
+
+      <!-- ลูกโอ๊ค -->
+      <path fill="hsl(40, 62%, 23%)" d="m30 33 a2 2,0,0 1,5 0">
+        <animate
+          attributeName="d"
+          values="m30 33 a2 2,0,0 1,5 0;m30 33 a2 2,0,0 1,5 0;m27 30 a2 2,0,0 1,5 0;m30 33 a2 2,0,0 1,5 0;m30 33 a2 2,0,0 1,5 0"
+          dur="10s"
+          repeatCount="indefinite"
+        />
+      </path>
+      <path fill="hsl(36, 23%, 54%)" d="m30.75 33 a2 4,0,0 0,3.5 0">
+        <animate
+          attributeName="d"
+          values="m30.75 33 a2 4,0,0 0,3.5 0;m30.75 33 a2 4,0,0 0,3.5 0;m27.75 30 a2 4,0,0 0,3.5 0;m30.75 33 a2 4,0,0 0,3.5 0;m30.75 33 a2 4,0,0 0,3.5 0"
+          dur="10s"
+          repeatCount="indefinite"
+        />
+      </path>
+
+      <!-- เส้นในหาง -->
+      <line
+        x1="8.5"
+        y1="12.5"
+        x2="8.5"
+        y2="23"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke="hsl(53, 54%, 50%)"
+        stroke-width=".5"
+        fill="none"
+      />
+      <path
+        d="M9.5,26 C9,25 8.5,25 8.5,23"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke="hsl(53, 54%, 50%)"
+        stroke-width=".5"
+        fill="none"
+      />
+      <path
+        d="M8.5,12.5 C8.3,8 5,6.5 3,5.9"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke="hsl(53, 54%, 50%)"
+        stroke-width=".5"
+        fill="none"
+      />
+      <path
+        fill="hsl(53, 54%, 50%)"
+        stroke="hsl(53, 54%, 50%)"
+        stroke-width=".25"
+        d="m3, 6 l-1,-.37 l1, .1"
+      />
+
+      <!--หัว-->
+      <circle fill="hsl(45, 50%, 30%)" r="7" cx="20" cy="16">
+        <animate
+          attributeName="cx"
+          values="20;23;20"
+          dur="5s"
+          repeatCount="indefinite"
+        />
+        <animate
+          attributeName="cy"
+          values="16;19;16"
+          dur="5s"
+          repeatCount="indefinite"
+        />
+      </circle>
+      <line
+        x1="14"
+        y1="9.5"
+        x2="14"
+        y2="22"
+        stroke="hsl(45, 50%, 30%)"
+        stroke-width="4"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <animate
+          attributeName="y1"
+          values="9.5;12.5;9.5"
+          dur="5s"
+          repeatCount="indefinite"
+        />
+        <animate
+          attributeName="x1"
+          values="14;17;14"
+          dur="5s"
+          repeatCount="indefinite"
+        />
+      </line>
+
+      <!-- ตัว -->
+      <circle fill="hsl(45, 50%, 30%)" r="9" cx="18" cy="27.5" />
+      <line
+        x1="23.5"
+        y1="25"
+        x2="26.5"
+        y2="28"
+        stroke="hsl(45, 70%, 23%)"
+        stroke-width="3.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <!-- แขน -->
+        <animate
+          attributeName="x2"
+          values="28;31;28"
+          dur="5s"
+          repeatCount="indefinite"
+        />
+        <animate
+          attributeName="y2"
+          values="28;31;28"
+          dur="5s"
+          repeatCount="indefinite"
+        />
+        <animate
+          attributeName="x1"
+          values="23.5;26;23.5"
+          dur="5s"
+          repeatCount="indefinite"
+        />
+        <animate
+          attributeName="y1"
+          values="25;28;25"
+          dur="5s"
+          repeatCount="indefinite"
+        />
+      </line>
+
+      <!-- ขา -->
+      <circle fill="hsl(45, 70%, 23%)" r="6.4" cx="15.5" cy="30" />
+      <line
+        x1="16"
+        y1="34.8"
+        x2="24"
+        y2="34.8"
+        stroke="hsl(45, 70%, 23%)"
+        stroke-width="3.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <line
+        x1="21"
+        y1="30"
+        x2="21"
+        y2="34.8"
+        stroke="hsl(45, 70%, 23%)"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+
+      <circle fill="hsl(0, 0%, 15%)" r=".8" cx="22" cy="14">
+        <!-- ตา -->
+        <animate
+          attributeName="cx"
+          values="22;25;22"
+          dur="5s"
+          repeatCount="indefinite"
+        />
+        <animate
+          attributeName="cy"
+          values="14;17;14"
+          dur="5s"
+          repeatCount="indefinite"
+        />
+      </circle>
+      <path
+        fill="black"
+        stroke="black"
+        stroke-width=".1"
+        d="m27, 16 l-1, -1 l1, 0"
+      >
+        <!-- จมูก -->
+        <animate
+          attributeName="d"
+          values="m27, 16 l-1, -1 l1, 0;m30, 19 l-1, -1 l1, 0;m27, 16 l-1, -1 l1, 0"
+          dur="5s"
+          repeatCount="indefinite"
+        />
+      </path>
+
+      <!------------ เพนกวิน <3 ---------------------------------------------------------------------------------------->
+      <path fill="hsl(208, 32%, 17%)" d="m7, 65.1 a10 10,0,0 1,20 0" />
+      <!-- หัว -->
+      <path fill="hsl(208, 32%, 17%)" d="m7, 65 l0, 20 l20, 0 l0, -20" />
+      <!-- ลำตัว -->
+
+      <!-- ส่วนล่าง -->
+      <path fill="hsl(208, 32%, 17%)" d="m7, 84.9 a4 3,45,1 0,8 0" />
+      <path fill="hsl(208, 32%, 17%)" d="m19, 84.9 a4 3,-45,1 0,8 0" />
+      <path fill="hsl(208, 32%, 17%)" d="m13 84 l0, 5 l8, 0 l0, -5" />
+
+      <!-- แขนซ้าย -->
+      <path
+        class="arm"
+        fill="hsl(208, 32%, 17%)"
+        d="m7.1, 77 l-3.5, -3.5 l0, -6 l3.5, 3.5"
+      />
+      <path
+        class="arm"
+        fill="hsl(208, 32%, 17%)"
+        d="m3.8, 67.7 a.5 2,0,1 0,0 5.70"
+      />
+
+      <!-- แขนขวา -->
+      <path
+        class="arm"
+        fill="hsl(208, 32%, 17%)"
+        d="m26.9, 77 l3.5, -3.5 l0, -6 l-3.5, 3.5"
+      />
+      <path
+        class="arm"
+        fill="hsl(208, 32%, 17%)"
+        d="m30.2, 73.37 a.5 2,0,1 0,0 -5.70"
+      />
+
+      <!-- หน้า -->
+      <line
+        x1="14"
+        y1="63"
+        x2="14"
+        y2="68"
+        stroke="white"
+        stroke-width="6.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <line
+        x1="20"
+        y1="63"
+        x2="20"
+        y2="68"
+        stroke="white"
+        stroke-width="6.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <line
+        x1="13"
+        y1="68"
+        x2="21"
+        y2="68"
+        stroke="white"
+        stroke-width="6.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+
+      <!-- หน้าท้อง -->
+      <path fill="white" d="m12, 89.1 l0, -7.5 l10, 0 l0, 7.5" />
+      <path fill="white" d="m12 81.65 a5 5,0,0 1,10 0" />
+
+      <!-- เท้าซ้าย -->
+      <line
+        x1="12"
+        y1="88"
+        x2="14.5"
+        y2="88"
+        stroke="hsl(45, 67%, 46%)"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <!-- เท้าขวา -->
+      <line
+        x1="19.5"
+        y1="88"
+        x2="22"
+        y2="88"
+        stroke="hsl(45, 67%, 46%)"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <!-- ตาซ้าย -->
+      <circle fill="hsl(208, 32%, 17%)" r=".8" cx="14" cy="64" />
+      <!-- ตาขวา -->
+      <circle fill="hsl(208, 32%, 17%)" r=".8" cx="20" cy="64" />
+      <path fill="hsl(45, 67%, 46%)" d="m15.5, 67 a.9 1,0,0 1,3 0" />
+      <path fill="hsl(45, 67%, 46%)" d="m15.5, 66.9 l1.5,1 l1.5,-1" />
+
+      <!------------ แมว <3 ---------------------------------------------------------------------------------------->
+      <!-- ขาหน้าซ้าย -->
+      <line
+        x1="66"
+        y1="83"
+        x2="66"
+        y2="89"
+        stroke-width="4"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke="hsl(36, 35%, 39%)"
+      >
+        <animate
+          attributeName="x2"
+          values="66;60;66"
+          dur="5s"
+          repeatCount="indefinite"
+        />
+      </line>
+      <line
+        x1="61.5"
+        y1="89.5"
+        x2="66"
+        y2="89.5"
+        stroke-width="4"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke="hsl(36, 35%, 39%)"
+      >
+        <animate
+          attributeName="x2"
+          values="66;60;66"
+          dur="5s"
+          repeatCount="indefinite"
+        />
+        <animate
+          attributeName="x1"
+          values="61.5;55.5;61.5"
+          dur="5s"
+          repeatCount="indefinite"
+        />
+      </line>
+
+      <!-- ลำตัว -->
+      <line
+        class="cat"
+        x1="73"
+        y1="82"
+        x2="84"
+        y2="82"
+        stroke="hsl(36, 48%, 41%)"
+        stroke-width="15"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+
+      <!-- ลาย2 -->
+      <path
+        class="cat"
+        fill="hsl(32, 41%, 25%)"
+        d="m76.25 78.3 a1 1,0,1 0,3.5 0"
+      />
+      <path
+        class="cat"
+        fill="hsl(32, 41%, 25%)"
+        d="m76.25, 78.4 l0, -4 l3.5, 0 l0, 4"
+      />
+
+      <!-- ลาย3 -->
+      <path
+        class="cat"
+        fill="hsl(32, 41%, 25%)"
+        d="m81.25 78.3 a1 1,0,1 0,3.5 0"
+      />
+      <path
+        class="cat"
+        fill="hsl(32, 41%, 25%)"
+        d="m81.25, 78.4 l0, -4 l3.5, 0 l0, 4"
+      />
+
+      <!-- ส่วนหัว -->
+      <circle class="cat" r="8" cx="69" cy="73" fill="hsl(36, 48%, 41%)" />
+      <!-- หัว -->
+      <path
+        class="cat"
+        fill="hsl(36, 48%, 41%)"
+        d="m61.75, 72 l0, -9 l9, 9z"
+        stroke="hsl(36, 48%, 41%)"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <!-- หูซ้าย -->
+      <path
+        class="cat"
+        fill="hsl(36, 48%, 41%)"
+        d="m76.25, 72 l0, -9 l-9, 9z"
+        stroke="hsl(36, 48%, 41%)"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <!-- หูขวา -->
+      <circle
+        class="cat"
+        fill="hsl(208, 32%, 17%)"
+        r=".7"
+        cx="64.5"
+        cy="70.5"
+      />
+      <!-- ตาซ้าย -->
+      <circle
+        class="cat"
+        fill="hsl(208, 32%, 17%)"
+        r=".7"
+        cx="73.5"
+        cy="70.5"
+      />
+      <!-- ตาขวา -->
+
+      <!-- จมูก -->
+      <circle class="cat" fill="white" r="1.7" cx="67.5" cy="73.5" />
+      <circle class="cat" fill="white" r="1.7" cx="70.5" cy="73.5" />
+      <path
+        class="cat"
+        fill="hsl(208, 32%, 17%)"
+        d="m67.75, 72.4 l0, -.7 l2.5, 0 l0, .7"
+      />
+      <path
+        class="cat"
+        d="m68, 72.5 l1, .5 l1, -.5z"
+        stroke="hsl(208, 32%, 17%)"
+        stroke-width=".5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <!-- หนวดซ้ายย -->
+      <line
+        class="cat"
+        x1="66.8"
+        y1="72.7"
+        x2="63.5"
+        y2="72.5"
+        stroke="hsl(208, 32%, 17%)"
+        stroke-width=".3"
+      />
+      <line
+        class="cat"
+        x1="67"
+        y1="73.7"
+        x2="63.5"
+        y2="74.2"
+        stroke="hsl(208, 32%, 17%)"
+        stroke-width=".3"
+      />
+      <line
+        class="cat"
+        x1="67.2"
+        y1="74.7"
+        x2="64"
+        y2="76"
+        stroke="hsl(208, 32%, 17%)"
+        stroke-width=".3"
+      />
+      <!-- หนวดขวา -->
+      <line
+        class="cat"
+        x1="71"
+        y1="72.7"
+        x2="74.3"
+        y2="72.5"
+        stroke="hsl(208, 32%, 17%)"
+        stroke-width=".3"
+      />
+      <line
+        class="cat"
+        x1="70.8"
+        y1="73.7"
+        x2="74.3"
+        y2="74.2"
+        stroke="hsl(208, 32%, 17%)"
+        stroke-width=".3"
+      />
+      <line
+        class="cat"
+        x1="71"
+        y1="74.7"
+        x2="74.2"
+        y2="76"
+        stroke="hsl(208, 32%, 17%)"
+        stroke-width=".3"
+      />
+
+      <!-- ลาย1 -->
+      <path
+        class="cat"
+        fill="hsl(32, 41%, 25%)"
+        d="m67.25 67.3 a1 1,0,1 0,3.5 0"
+      />
+      <path
+        class="cat"
+        fill="hsl(32, 41%, 25%)"
+        d="m67.25, 67.4 l0, -2 l3.5, 0 l0, 2"
+      />
+      <path
+        class="cat"
+        fill="hsl(32, 41%, 25%)"
+        d="m67.25 65.45 a2 1,0,0 1,3.5 0"
+      />
+
+      <!-- ขาหน้าขวา -->
+      <line
+        x1="74"
+        y1="83"
+        x2="74"
+        y2="89"
+        stroke-width="4"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke="hsl(36, 48%, 50%)"
+      >
+        <animate
+          attributeName="x2"
+          values="74;68;74"
+          dur="5s"
+          repeatCount="indefinite"
+        />
+      </line>
+      <line
+        x1="69.5"
+        y1="89.5"
+        x2="74"
+        y2="89.5"
+        stroke-width="4"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke="hsl(36, 48%, 50%)"
+      >
+        <animate
+          attributeName="x2"
+          values="74;68;74"
+          dur="5s"
+          repeatCount="indefinite"
+        />
+        <animate
+          attributeName="x1"
+          values="69.5;63.5;69.5"
+          dur="5s"
+          repeatCount="indefinite"
+        />
+      </line>
+
+      <!-- ขาหลัง -->
+      <circle
+        class="cat"
+        r="5.5"
+        cx="84.5"
+        cy="85.5"
+        fill="hsl(36, 48%, 50%)"
+      />
+      <line
+        x1="79.5"
+        y1="89.5"
+        x2="85"
+        y2="89.5"
+        stroke-width="3"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke="hsl(36, 48%, 50%)"
+      />
+
+      <!-- หาง -->
+      <path
+        d="M89,80 C95,77.5 95,72.5 89,70 M89,70 C83,67.5 83,62.5 89,60"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke="hsl(36, 48%, 41%)"
+        fill="none"
+      >
+        <animate
+          attributeName="d"
+          values="M89,80 C95,77.5 95,72.5 89,70 M89,70 C83,67.5 83,62.5 89,60;M89,78 C95,77.5 95,72.5 89,68 M89,68 C83,65 83,60 91,56;M89,80 C95,77.5 95,72.5 89,70 M89,70 C83,67.5 83,62.5 89,60"
+          dur="5s"
+          repeatCount="indefinite"
+        />
+        <animate
+          attributeName="x1"
+          values="69.5;63.5;69.5"
+          dur="5s"
+          repeatCount="indefinite"
+        />
+      </path>
+    </svg>
+  </body>
+</html>

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <style>
+    .container-fluid {
+      mix-blend-mode: lighten;
+    }
+
+
+    body {
+      font-family: 'Irish Grover', cursive;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-image: url("img/bg.png");
+      width: 100%;
+      overflow-x: hidden;
+      color: white;
+    }
+
+    .container-motto {
+      width: 100%;
+      position: relative;
+      text-align: center;
+      color: white;
+    }
+
+    .container-motto img {
+      width: 100%;
+      height: 30%;
+    }
+
+    .text-container {
+      width: 100%;
+      height: 30%;
+      position: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .top-centered {
+      position: relative;
+      font-size: 68px;
+      /* top: -20%; */
+      /* left: 35%; */
+      transform: translate(0%, -500%);
+    }
+
+
+    .bottom-centered {
+      position: relative;
+      font-size: 108px;
+      left: 50%;
+      transform: translate(-50%, -300%);
+    }
+
+    .card-title,
+    .card-text {
+      color: black;
+    }
+
+    hr {
+      color: white;
+      position: relative;
+      width: 30%;
+      /* top: 55%; */
+      left: 35%;
+      transform: translate(0%, -32000%);
+      z-index: 1;
+      opacity: 1;
+    }
+
+    .container-recom {
+      overflow: hidden;
+      padding: 1%;
+      width: 90%;
+      height: 20rem;
+      border-radius: 10px;
+      transform: translate(5%, 5%);
+    }
+
+    .card-block {
+      height: 300px;
+      background-color: #fff;
+      border: none;
+      background-position: center;
+      background-size: cover;
+      transition: all 0.2s ease-in-out !important;
+      border-radius: 24px;
+      animation: move 15s linear infinite;
+    }
+
+    .card-block:hover {
+      transform: translateY(-5px);
+      box-shadow: none;
+      opacity: 0.9;
+    }
+
+
+    .card-img-top {
+      background-size: cover;
+    }
+
+    .card {
+      background-color: #ffffff;
+      background-image: #ffffff;
+    }
+
+    .swiper-container {
+      top: -10%;
+      width: 90vw;
+      height: 40vh;
+    }
+
+    .swiper-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .swiper-pagination {
+      position: absolute;
+      bottom: 50%;
+      right: 45%;
+      width: auto !important;
+      left: auto !important;
+      margin: 0;
+    }
+
+    .swiper-pagination-bullet {
+      padding: 5px 10px;
+      border-radius: 20px;
+      width: 70px;
+      height: 20px;
+      text-align: center;
+      line-height: 30px;
+      font-size: 12px;
+      color: #000;
+      opacity: 1;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .swiper-pagination-bullet-active {
+      color: #fff;
+      background: #007aff;
+    }
+
+    .bottom- ::-webkit-scrollbar {
+      width: 1rem;
+    }
+
+    ::-webkit-scrollbar-track {
+      background-color: black;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: #ae0707;
+    }
+
+    @keyframes move {
+      0% {
+        right: 0px;
+      }
+
+      50% {
+        right: 2100px;
+      }
+
+      100% {
+        right: 0px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-black">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="img/Logo.png" alt="logo">
+
+      </a>
+    </div>
+    <div class="container-fluid">
+      <a class="navbar-home" href="#">
+        <img src="img/Home.png" alt="logo">
+        <!--         <h1 class="nav-name">Home</h1> -->
+      </a>
+    </div>
+    <div class="container-fluid">
+      <a class="navbar-promotion" href="#">
+        <img src="img/Promotion-web.png" alt="logo">
+        <!--         <h1 class="nav-name">Promotion</h1> -->
+      </a>
+    </div>
+
+    <div class="container-fluid">
+      <a class="navbar-recommend" href="#">
+        <img src="img/Recommended.png" alt="logo">
+        <!--         <h1 class="nav-name">Recommended</h1> -->
+      </a>
+    </div>
+
+    <div class="container-fluid">
+      <a class="navbar-menu" href="#">
+        <img src="img/Menu.png" alt="logo">
+        <!--         <h1 class="nav-name">Menu</h1> -->
+      </a>
+    </div>
+
+    <!--     nev trolley login -->
+    <div class="container">
+      <div class="container-fluid">
+        <a class="navbar-trolley" href="#">
+          <img src="img/Trolley.png" alt="logo">
+          <!--         <h1 class="nav-name">Menu</h1> -->
+        </a>
+      </div>
+      <div class="container-fluid">
+        <a class="navbar-account" href="#">
+          <img src="img/Account.png" alt="logo">
+          <!--         <h1 class="nav-name">Menu</h1> -->
+        </a>
+      </div>
+      <div class="container-fluid">
+        <a class="navbar-contact" href="#">
+          <img src="img/Contact us.png" alt="logo">
+          <!--         <h1 class="nav-name">Menu</h1> -->
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!--   Motto -->
+  <div class="container-motto">
+    <img src="img/Aether meme 2.png">
+    <div class=" top-centered">Original and Tasty
+  </div>
+  <hr>
+  </hr>
+  <div class="bottom-centered">Style Japanese</div>
+  </div>
+
+  <div class="swiper-container">
+    <b>
+      <h2>SPECIAL DEALS / PROMOTION</h2>
+    </b>
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide"><img src="img/Webtech ref.png" alt=""></div>
+      <div class="swiper-slide"><img src="img/Aether meme 2.png" alt=""></div>
+      <div class="swiper-slide"><img src="img/Webtech ref.png" alt=""></div>
+    </div>
+    <!-- pagination bullets -->
+    <div class="swiper-pagination"></div>
+
+    <!-- navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+  <div class="container-fluid">
+    <div class="container-recom row flex-row flex-nowrap mt-4 pb-4 pt-2">
+      <div class="col-2">
+        <div class="card card-block card-1" id="card">
+          <img src="/img/Aether meme 2.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+              card's
+              content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="card card-block card-1" id="card">
+          <img src="/img/Aether meme 2.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+              card's
+              content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="card card-block card-1" id="card">
+          <img src="/img/Aether meme 2.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+              card's
+              content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="card card-block card-1" id="card">
+          <img src="/img/Aether meme 2.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+              card's
+              content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="card card-block card-1" id="card">
+          <img src="/img/Aether meme 2.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+              card's
+              content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="card card-block card-1" id="card">
+          <img src="/img/Aether meme 2.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+              card's
+              content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="card card-block card-1" id="card">
+          <img src="/img/Aether meme 2.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+              card's
+              content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="card card-block card-1" id="card">
+          <img src="/img/Aether meme 2.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+              card's
+              content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="card card-block card-1" id="card">
+          <img src="/img/Aether meme 2.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+              card's
+              content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="card card-block card-1" id="card">
+          <img src="/img/Aether meme 2.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+              card's
+              content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="card card-block card-1" id="card">
+          <img src="/img/Aether meme 2.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+              card's
+              content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-section>
+    <img scr=" /img/Aether meme 2.png">
+  </div>
+
+
+  <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+  <script>
+    const mySwiper = new Swiper('.swiper-container', {
+      // Optional parameters
+      direction: 'horizontal',
+      loop: true,
+      speed: 300,
+      mousewheel: true,
+      effect: "fade",
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        renderBullet: function (index, className) {
+          return '<span class="' + className + '">' + '</span>';
+        },
+      },
+
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+
+      // And if we need scrollbar
+      scrollbar: {
+        el: '.swiper-scrollbar',
+      },
+    });
+  </script>
+
+</body>
+
+</html>

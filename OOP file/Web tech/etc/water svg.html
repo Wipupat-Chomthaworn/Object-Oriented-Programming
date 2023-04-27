@@ -1,0 +1,276 @@
+<html>
+  <head>
+    <title>SVG
+    </title>
+    <style>
+      body{
+        background:#666;
+        margin:0em;
+        margin-top:2em;
+        font-family:sans-serif;
+      }
+      svg{
+        background:linear-gradient(hsl(213, 100%, 68%),hsl(213, 100%, 20%));
+        width:90vmin;
+        height:90vmin;
+        display:block;
+        margin:auto;
+        box-shadow:0px 0px 10px #0006;
+      }
+      
+/*       .fish{transform:translate(calc(var(--ta) * 0.5px + 10px),10px) scale(0.5);
+      } */
+      .fish{transform:translate(90px,60px) scale(0.5);
+      }
+      .fish2{transform:translate(80px,70px) scale(0.7);
+      }
+      .fish3{transform:translate(90px,80px) scale(0.3);
+      }
+      .fin{animation:sfin 1s linear infinite alternate;
+
+      }
+      .fin:nth-child(odd){
+		animation-delay: 0.2s;
+      }
+      .fin:nth-child(even){
+		animation-delay: 0.7s;
+      }
+      .tree{transform:translatex(50%)
+
+      }
+      .tree1{transform:translate(80%,-3%) rotatey(180deg)
+
+      }
+      .tree2{transform:translate(82%,-3%) rotatey(180deg)
+
+      }
+      #seaweed1{transform:translate(23%,10%)
+
+      }
+      #a1{
+
+      animation:ai 4s linear infinite;
+      }
+      #a2{
+
+      animation:ai 3s linear infinite;
+      }
+      #a3{
+
+      animation:ai2 4s 2s linear infinite;
+      }
+      #a4{
+
+      animation:ai2 4s 2s linear infinite;
+      }
+      #a3{
+
+      animation:ai 4s 2s linear infinite;
+      }
+      /*       .la{
+		animation:sfin 2s var(--d) linear infinite alternate;
+      } */
+      .rock{
+		transform:translatex(55%)
+      }
+      
+      #top{
+		transform:translatey(-50%);
+      animation:move 10s linear infinite;
+      }
+      #middle{
+		transform:translate(20%,50%) rotatey(180deg);
+      animation:move2 10s linear infinite;
+      }
+      #lowwer{
+      animation:move3 10s linear infinite;
+      }
+      @keyframes move{
+        0%{transform:translatex(30px) translatey(-50%);}
+        100%{transform:translatex(-100px) translatey(-55%);}
+
+      }
+      @keyframes move2{
+        0%{transform:translatex(-20px) translatey(50%) rotatey(180deg);}
+        100%{transform:translatex(130px) translatey(50%) rotatey(180deg);}
+
+      }
+      @keyframes move3{
+        0%{transform:translatex(-50px) translatey(10%) rotatey(180deg) ; }
+        100%{transform:translatex(200px) translatey(0%) rotatey(180deg);}
+
+      }
+      @keyframes sfin{
+        0%{
+          transform: skew(-5deg,0deg);}
+        100%{
+          transform: skew(5deg,0deg);}
+
+      }
+      @keyframes ai{
+        0%{transform:translatey(0%);}
+        100%{transform:translatex(15px) translatey(-100%)}
+
+      }
+      @keyframes ai2{
+        0%{transform:translatey(0%);}
+        100%{transform:translatex(-15px) translatey(-100%)}
+
+      }
+/*       @keyframes sfin{
+        0%{transform-origin:center;
+          transform: skew(0deg);}
+        100%{transform-origin:center;
+          transform: skew(360deg);}
+
+      } */
+    </style>
+  </head>
+  <body>
+    <svg viewBox="0 0 100 100">
+<!-- fish       -->
+      <g id='top'>
+      <g class='fish'style="fill:black ;">
+      <ellipse cx="0" cy="5" rx="8" ry="4"/>
+      <polygon class='fin' points="7.5,5 12,0 12,10" />
+      <polygon points="-5,5 5,11 5,-1" />
+        
+      </g>
+      <g class='fish2'style="fill:black ;">
+      <ellipse cx="0" cy="5" rx="8" ry="4"/>
+      <polygon class='fin' points="7.5,5 12,0 12,10" />
+      <polygon points="-5,5 5,11 5,-1" />
+        
+      </g>
+      
+      <g class='fish3'style="fill:black ;">
+      <ellipse cx="0" cy="5" rx="8" ry="4"/>
+      <polygon class='fin' points="7.5,5 12,0 12,10"  />
+      <polygon points="-5,5 5,11 5,-1" />
+        
+      </g>
+      </g>
+      
+      
+      
+      
+      <g id='lowwer'>
+      <g class='fish'style="fill:black ;">
+      
+      <polygon class='fin' points="7.5,5 12,0 12,10" style="fill:hsl(200,80%,70%)"/>
+      <polygon points="-7,5 5,5 5,-1" style="fill:hsl(235,80%,70%)"/>
+      <ellipse cx="0" cy="5" rx="8" ry="4" style="fill:hsl(200,80%,60%)"/>
+      <circle cx='-5' cy='3' r='1' fill='white' />
+      <circle cx='-5' cy='3' r='0.5' fill='black' />
+        
+      </g>
+      <g class='fish2'style="fill:black ;">
+      
+      <polygon class='fin' points="7.5,5 12,0 12,10" style="fill:hsl(200,80%,70%)"/>
+      <polygon points="-5,5 5,6 5,-1" style="fill:hsl(255,80%,60%)" />
+      <ellipse cx="0" cy="5" rx="8" ry="4" style="fill:hsl(200,80%,60%)"/>
+      <circle cx='-5' cy='3' r='1' fill='white' />
+      <circle cx='-5' cy='3' r='0.5' fill='black' />
+        
+      </g>
+      </g>
+      <g id='middle' >
+      <polygon class='fin' points="7.5,5 12,0 12,10" style="fill:hsl(54,80%,30%)" />
+      <ellipse cx="1" cy="5" rx="6" ry="6" style="fill:hsl(36,80%,60%)"/>
+      <g class='t2'style="fill:black ;">
+      <ellipse cx="0" cy="5" rx="8" ry="4" style="fill:hsl(54,80%,40%)"/>
+      <circle cx='-5' cy='3' r='1' fill='white' />
+      <circle cx='-5' cy='3' r='0.5' fill='black' />
+      
+      
+      
+      </g>
+      </g>
+      
+<!--ground        -->
+      
+<!--       <rect id='peek' width='50' height='30' x='50' y='50' style="fill:hsl(0, 1%, 42%);stroke:black"/> -->
+<!--       <polygon points='' /> -->
+      
+      <g id='seaweed'>
+      <g class='tree'>
+
+         <ellipse cx="8" cy="75" rx="2.5" ry="5" fill="hsl(169,80%,40%)"/>
+        <ellipse cx="8.5" cy="70" rx="2.3" ry="4" fill="hsl(169,80%,40%)" />
+        <ellipse cx="8" cy="65.5" rx="2" ry="4" fill="hsl(169,80%,40%)" />
+        <ellipse cx="8.5" cy="60.5" rx="1.5" ry="3" fill="hsl(169,80%,40%)" />
+        <ellipse cx="8" cy="60" rx="1" ry="2.5" fill="hsl(169,80%,40%)" />
+      </g>
+      <g class='tree1'>
+
+         <ellipse cx="8" cy="75" rx="2.5" ry="5" fill="hsl(169,80%,40%)"/>
+        <ellipse cx="8.5" cy="70" rx="2.3" ry="4" fill="hsl(169,80%,40%)" />
+        <ellipse cx="8" cy="65.5" rx="2" ry="4" fill="hsl(169,80%,40%)" />
+        <ellipse cx="8.5" cy="60.5" rx="1.5" ry="3" fill="hsl(169,80%,40%)" />
+        <ellipse cx="8" cy="60" rx="1" ry="2.5" fill="hsl(169,80%,40%)" />
+      </g>
+       <g class='tree2'>
+
+         <ellipse cx="16" cy="77" rx="2.5" ry="5" fill="hsl(169,80%,40%)"/>
+        <ellipse cx="16.5" cy="70" rx="2.3" ry="4" fill="hsl(169,80%,40%)" />
+        <ellipse cx="16" cy="65.5" rx="2" ry="4" fill="hsl(169,80%,40%)" />
+        <ellipse cx="16.5" cy="60.5" rx="1.5" ry="3" fill="hsl(169,80%,40%)" />
+        <ellipse cx="16" cy="57" rx="1" ry="3" fill="hsl(169,80%,40%)" />
+      </g>
+      </g>
+      
+      <g id='seaweed1'>
+      <g class='tree'>
+
+         <ellipse cx="8" cy="75" rx="2.5" ry="5" fill="#ff4040"/>
+        <ellipse cx="8.5" cy="70" rx="2.3" ry="4" fill="#ff4040" />
+        <ellipse cx="8" cy="65.5" rx="2" ry="4" fill="#ff4040" />
+        <ellipse cx="8.5" cy="60.5" rx="1.5" ry="3" fill="#ff4040" />
+        <ellipse cx="8" cy="60" rx="1" ry="2.5" fill="#ff4040" />
+      </g>
+      <g class='tree1'>
+
+         <ellipse cx="8" cy="75" rx="2.5" ry="5" fill="#ff4040"/>
+        <ellipse cx="8.5" cy="70" rx="2.3" ry="4" fill="#ff4040" />
+        <ellipse cx="8" cy="65.5" rx="2" ry="4" fill="#ff4040" />
+        <ellipse cx="8.5" cy="60.5" rx="1.5" ry="3" fill="#ff4040" />
+        <ellipse cx="8" cy="60" rx="1" ry="2.5" fill="#ff4040" />
+      </g>
+       <g class='tree2'>
+
+         <ellipse cx="16" cy="77" rx="2.5" ry="5" fill="#ff4040"/>
+        <ellipse cx="16.5" cy="70" rx="2.3" ry="4" fill="#ff4040" />
+        <ellipse cx="16" cy="65.5" rx="2" ry="4" fill="#ff4040" />
+        <ellipse cx="16.5" cy="60.5" rx="1.5" ry="3" fill="#ff4040" />
+        <ellipse cx="16" cy="57" rx="1" ry="3" fill="#ff4040" />
+      </g>
+      </g>
+      
+      <g class='rock'>
+      <ellipse id='r1' cx="15" cy="90" rx="20" ry="15" style="fill:hsl(208, 10%, 52%);"/>
+      <ellipse id='r2' cx="30" cy="90" rx="15" ry="9" style="fill:hsl(208, 7%, 42%);"/>
+      </g>
+      
+      <g class='air'>
+        <circle id='a3' cx='21' cy='70' r='4' style="fill:hsl(220,100%,80%);stroke:white;stroke-width:0.5"/>
+        <circle id='a1' cx='18' cy='71.6' r='1.3' style="fill:hsl(220,100%,80%);stroke:white;stroke-width:0.2"/>
+        <circle id='a2' cx='21' cy='78' r='2' style="fill:hsl(220,100%,80%);stroke:white;stroke-width:0.5"/>
+        <circle id='a5' cx='18' cy='71.6' r='1.3' style="fill:hsl(220,100%,80%);stroke:white;stroke-width:0.2"/>
+        <circle id='a4' cx='21' cy='78' r='2' style="fill:hsl(220,100%,80%);stroke:white;stroke-width:0.5"/>
+      </g>
+      
+      <g class="air-puri">
+        <rect width='6' height='20' x='18' y='70' style="fill:hsl(0,0%,35%);"/>
+        <rect width='12' height='3' x='15' y='70' style="fill:hsl(29,71%,46%);"/>
+        
+      </g>
+      <rect width="100" height="15" y='90' style="fill:hsl(54,80%,40%)" />
+<!--       <line x1='30' y1='50' x2='30' y2='100' style="stroke:black;stroke-width:1" /> -->
+      
+      
+      
+      
+     
+    </svg>
+  </body>
+</html>
