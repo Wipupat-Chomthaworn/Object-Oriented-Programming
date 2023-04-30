@@ -15,7 +15,7 @@ This repository contains code for a Java Object-Oriented Programming lab. The pu
 
 ## Demo
 
-![Demo GIF](https://imgflip.com/gif/7k04e7)
+![Demo GIF](https://github.com/Wipupat-Chomthaworn/Object-Oriented-Programming/blob/main/Final%20Game%20Finished/Java%20game%20demo%20gif.gif)
 
 ## Usage
 
