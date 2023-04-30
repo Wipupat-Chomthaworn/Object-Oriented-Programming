@@ -14,10 +14,7 @@ This repository contains code for a Java Object-Oriented Programming lab. The pu
 3. Run the `Main` class to execute the program.
 
 ## Demo
-
-![Demo GIF](https://github.com/Wipupat-Chomthaworn/Object-Oriented-Programming/blob/main/Final%20Game%20Finished/Java%20game%20demo%20gif.gif)
-
-[![Demo video](https://img.youtube.com/vi/I7Z7Ioq1dSU/0.jpg)](https://www.youtube.com/watch?v=I7Z7Ioq1dSU)
+[![Demo GIF]([https://img.youtube.com/vi/I7Z7Ioq1dSU/0.jpg](https://github.com/Wipupat-Chomthaworn/Object-Oriented-Programming/blob/main/Final%20Game%20Finished/Java%20game%20demo%20gif.gif))](https://www.youtube.com/watch?v=I7Z7Ioq1dSU)
 
 ## Usage
 
