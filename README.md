@@ -13,6 +13,10 @@ This repository contains code for a Java Object-Oriented Programming lab. The pu
 2. Open the project in your IDE.
 3. Run the `Main` class to execute the program.
 
+## Demo
+
+![Demo GIF](https://imgflip.com/gif/7k04e7)
+
 ## Usage
 
 The program demonstrates the use of object-oriented programming concepts such as inheritance, encapsulation, and polymorphism. It includes several classes that represent different types of shapes, and a `Main` class that creates instances of these shapes and performs various operations on them.
@@ -20,4 +24,3 @@ The program demonstrates the use of object-oriented programming concepts such as
 ## Contributing
 
 Contributions to this project are welcome. If you find a bug or have a suggestion for improvement, please create an issue or submit a pull request.
-
