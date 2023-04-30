@@ -16,6 +16,9 @@ This repository contains code for a Java Object-Oriented Programming lab. The pu
 ## Demo
 [![Demo GIF](https://github.com/Wipupat-Chomthaworn/Object-Oriented-Programming/blob/main/Final%20Game%20Finished/Java%20game%20demo%20gif.gif)](https://www.youtube.com/watch?v=I7Z7Ioq1dSU)
 
+##DEMO VIDEO
+<iframe width="560" height="315" src="https://www.youtube.com/embed/I7Z7Ioq1dSU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 ## Usage
 
 The program demonstrates the use of object-oriented programming concepts such as inheritance, encapsulation, and polymorphism. It includes several classes that represent different types of shapes, and a `Main` class that creates instances of these shapes and performs various operations on them.
