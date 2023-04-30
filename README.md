@@ -9,7 +9,7 @@ This repository contains code for a Java Object-Oriented Programming lab. The pu
 
 ## Getting Started
 
-1. Clone the repository to your local machine using `git clone https://github.com/<username>/<repo-name>.git`.
+1. Clone the repository to your local machine using `git clone https://github.com/Wipupat-Chomthaworn/Object-Oriented-Programming.git`.
 2. Open the project in your IDE.
 3. Run the `Main` class to execute the program.
 
